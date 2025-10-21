@@ -126,7 +126,7 @@ export const Navigation = () => {
             </div>
 
             {/* Language Switcher */}
-            <LanguageSwitcher />
+            {/* <LanguageSwitcher /> */}
 
             {/* Mobile Menu Button */}
             <div className="lg:hidden flex items-center space-x-2">

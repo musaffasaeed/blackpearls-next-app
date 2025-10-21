@@ -16,14 +16,12 @@ export const Team = () => {
     {
       name: t("expert1.name"),
       title: t("expert1.title"),
-      image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face&auto=format&q=80",
+      image: "/images/hero-background.jpg",
     },
     {
       name: t("expert2.name"),
       title: t("expert2.title"),
-      image:
-        "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face&auto=format&q=80",
+      image: "/images/hero-background.jpg",
     },
   ];
 
