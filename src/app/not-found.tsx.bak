@@ -1,5 +1,4 @@
 "use client";
-import { useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -9,7 +8,6 @@ import { Footer } from "@/components/Footer";
 import { Home, ArrowLeft, Phone, CheckCircle } from "lucide-react";
 
 export default function NotFound() {
-  const t = useTranslations("notFound");
   const router = useRouter();
 
   return (
@@ -23,21 +21,21 @@ export default function NotFound() {
             <div className="mb-8">
               <h1 className="text-9xl font-bold text-primary/20 mb-4">404</h1>
               <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-6">
-                {t("heading")}
+                Page Not Found
               </h2>
               <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-                {t("description")}
+                The page you're looking for doesn't exist or has been moved.
               </p>
             </div>
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
               <Button
-                onClick={() => router.push("/")}
+                onClick={() => router.push("/en")}
                 size="lg"
                 className="bg-primary hover:bg-primary/90 text-white px-8 py-3">
                 <Home className="w-5 h-5 mr-2" />
-                {t("backHome")}
+                Back to Home
               </Button>
 
               <Button
@@ -55,7 +53,7 @@ export default function NotFound() {
           <Card className="mb-16">
             <CardContent className="p-8">
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">
-                {t("suggestions.title")}
+                What can you do?
               </h3>
 
               <div className="grid md:grid-cols-3 gap-6">
@@ -65,7 +63,7 @@ export default function NotFound() {
                   </div>
                   <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Check URL</h4>
                   <p className="text-sm text-gray-600 dark:text-gray-300">
-                    {t("suggestions.checkUrl")}
+                    Make sure the URL is spelled correctly
                   </p>
                 </div>
 
@@ -75,7 +73,7 @@ export default function NotFound() {
                   </div>
                   <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Homepage</h4>
                   <p className="text-sm text-gray-600 dark:text-gray-300">
-                    {t("suggestions.goHome")}
+                    Return to our homepage to explore our services
                   </p>
                 </div>
 
@@ -85,7 +83,7 @@ export default function NotFound() {
                   </div>
                   <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Contact Us</h4>
                   <p className="text-sm text-gray-600 dark:text-gray-300">
-                    {t("suggestions.contact")}
+                    Get in touch if you need assistance
                   </p>
                 </div>
               </div>
@@ -96,22 +94,22 @@ export default function NotFound() {
           <div className="text-center">
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Popular Pages</h3>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/#about">
+              <Link href="/en#about">
                 <Button variant="outline" className="px-6 py-2">
                   About Us
                 </Button>
               </Link>
-              <Link href="/#services">
+              <Link href="/en#services">
                 <Button variant="outline" className="px-6 py-2">
                   Services
                 </Button>
               </Link>
-              <Link href="/#portfolio">
+              <Link href="/en#portfolio">
                 <Button variant="outline" className="px-6 py-2">
                   Portfolio
                 </Button>
               </Link>
-              <Link href="/#contact">
+              <Link href="/en#contact">
                 <Button variant="outline" className="px-6 py-2">
                   Contact
                 </Button>

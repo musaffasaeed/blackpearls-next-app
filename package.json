@@ -5,7 +5,10 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
-    "start": "next start"
+    "build:export": "next build",
+    "start": "next start",
+    "deploy": "yarn build:export && yarn copy:htaccess",
+    "copy:htaccess": "node -e \"require('fs').copyFileSync('public/.htaccess', 'dist/.htaccess')\""
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

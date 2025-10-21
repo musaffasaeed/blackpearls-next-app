@@ -487,13 +487,13 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   };
 
   const t = (key: string): string => {
-    const translation = translations[language][key];
+    const translation = (translations[language] as any)[key];
     if (translation) {
       return translation;
     }
 
     // Fallback to English if translation not found
-    const englishTranslation = translations.en[key];
+    const englishTranslation = (translations.en as any)[key];
     if (englishTranslation) {
       return englishTranslation;
     }

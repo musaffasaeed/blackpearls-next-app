@@ -89,12 +89,10 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({
   children,
-  params,
 }: Readonly<{
   children: React.ReactNode;
-  params: { locale: string };
 }>) {
-  const locale = params?.locale || "en";
+  const locale = "en"; // Default locale for root layout
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -164,7 +162,7 @@ export default async function RootLayout({
   };
 
   return (
-    <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>
+    <html lang={locale} dir="ltr">
       <head>
         <script
           type="application/ld+json"
