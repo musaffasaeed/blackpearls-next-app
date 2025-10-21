@@ -1,26 +1,28 @@
 import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from "lucide-react";
 import Image from "next/image";
 import logo from "@/assets/bp-logo.png";
+import { useTranslations } from "next-intl";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const t = useTranslations("footer");
 
   const quickLinks = [
-    { name: "About Us", href: "#about" },
-    { name: "Services", href: "#services" },
-    { name: "Projects", href: "#projects" },
-    { name: "Process", href: "#process" },
-    { name: "Safety", href: "#safety" },
-    { name: "Contact", href: "#contact" },
+    { name: t("links.about"), href: "#about" },
+    { name: t("links.services"), href: "#services" },
+    { name: t("links.projects"), href: "#projects" },
+    { name: t("links.process"), href: "#process" },
+    { name: t("links.safety"), href: "#safety" },
+    { name: t("links.contact"), href: "#contact" },
   ];
 
   const services = [
-    "HVAC Solutions",
-    "Electrical Services",
-    "Fire Safety Solutions",
-    "Plumbing Solutions",
-    "Surveillance & Security",
-    "Maintenance Contracts",
+    t("services.hvac"),
+    t("services.electrical"),
+    t("services.fire"),
+    t("services.plumbing"),
+    t("services.security"),
+    t("services.maintenance"),
   ];
 
   const scrollToSection = (href: string) => {
@@ -44,12 +46,9 @@ export const Footer = () => {
                 width={48}
                 height={48}
               />
-              <span className="text-lg font-bold">Black Pearls</span>
+              <span className="text-lg font-bold">{t("companyName")}</span>
             </div>
-            <p className="text-primary-foreground/80 mb-6 leading-relaxed">
-              Delivering fully integrated construction solutions that begin with strong civil
-              foundations and extend seamlessly into advanced MEP systems across Saudi Arabia.
-            </p>
+            <p className="text-primary-foreground/80 mb-6 leading-relaxed">{t("description")}</p>
             <div className="flex space-x-4">
               <a
                 href="#"
@@ -80,7 +79,7 @@ export const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-bold mb-6">Quick Links</h3>
+            <h3 className="text-lg font-bold mb-6">{t("quickLinks.title")}</h3>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.name}>
@@ -100,7 +99,7 @@ export const Footer = () => {
 
           {/* Services */}
           <div>
-            <h3 className="text-lg font-bold mb-6">Our Services</h3>
+            <h3 className="text-lg font-bold mb-6">{t("services.title")}</h3>
             <ul className="space-y-3">
               {services.map((service) => (
                 <li key={service}>
@@ -120,7 +119,7 @@ export const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-bold mb-6">Contact Us</h3>
+            <h3 className="text-lg font-bold mb-6">{t("contact.title")}</h3>
             <ul className="space-y-4">
               <li className="flex items-start space-x-3">
                 <Phone className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
@@ -158,23 +157,23 @@ export const Footer = () => {
         <div className="container-custom py-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-primary-foreground/60 text-sm">
-              © {currentYear} Black Pearls Contracting. All rights reserved.
+              © {currentYear} {t("copyright")}
             </p>
             <div className="flex space-x-6 text-sm">
               <a
                 href="#"
                 className="text-primary-foreground/60 hover:text-accent transition-colors">
-                Privacy Policy
+                {t("privacy")}
               </a>
               <a
                 href="#"
                 className="text-primary-foreground/60 hover:text-accent transition-colors">
-                Terms of Service
+                {t("terms")}
               </a>
               <a
                 href="#"
                 className="text-primary-foreground/60 hover:text-accent transition-colors">
-                Cookie Policy
+                {t("cookies")}
               </a>
             </div>
           </div>

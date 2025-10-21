@@ -5,21 +5,23 @@ import { motion, useInView } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 export const Team = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const t = useTranslations("team");
 
   const experts = [
     {
-      name: "Ahmed Al-Rashid",
-      title: "Site Supervisor",
+      name: t("expert1.name"),
+      title: t("expert1.title"),
       image:
         "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face&auto=format&q=80",
     },
     {
-      name: "Sarah Al-Mansouri",
-      title: "Project Manager",
+      name: t("expert2.name"),
+      title: t("expert2.title"),
       image:
         "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face&auto=format&q=80",
     },
@@ -41,19 +43,13 @@ export const Team = () => {
             initial={{ opacity: 0, x: -30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6 }}>
-            <h3 className="text-sm font-medium text-primary mb-2">Meet Our Experts</h3>
-            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
-              Building with Excellence
-            </h2>
-            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              Our team of experienced professionals brings excellence and innovation to every
-              project. With years of expertise in construction and project management, we ensure
-              your vision becomes reality.
-            </p>
+            <h3 className="text-sm font-medium text-primary mb-2">{t("subtitle")}</h3>
+            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">{t("title")}</h2>
+            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">{t("description")}</p>
             <Button
               onClick={() => scrollToSection("#contact")}
               className="bg-accent hover:bg-accent/90 text-accent-foreground">
-              Let's Talk Now <ArrowRight className="ml-2 h-4 w-4" />
+              {t("cta")} <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </motion.div>
 

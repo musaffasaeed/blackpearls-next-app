@@ -7,11 +7,13 @@ import { Camera, ArrowRight, ChevronLeft, ChevronRight, ZoomIn, X } from "lucide
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 export const Gallery = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const [activeCategory, setActiveCategory] = useState("All Projects");
+  const t = useTranslations("gallery");
+  const [activeCategory, setActiveCategory] = useState(t("categories.all"));
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -97,8 +99,8 @@ export const Gallery = () => {
           className="text-center mb-1">
           <div className="relative">
             <h2 className="text-5xl lg:text-6xl font-extrabold mb-6 tracking-tight">
-              <span className="text-primary">PROJECT</span>{" "}
-              <span className="text-accent">GALLERY</span>
+              <span className="text-primary">{t("title1")}</span>{" "}
+              <span className="text-accent">{t("title2")}</span>
             </h2>
 
             {/* Decorative Line */}
@@ -107,8 +109,7 @@ export const Gallery = () => {
             </div>
 
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Explore our portfolio of completed projects showcasing excellence in construction, MEP
-              systems, and innovative building solutions across Saudi Arabia.
+              {t("description")}
             </p>
           </div>
         </motion.div>
@@ -122,7 +123,7 @@ export const Gallery = () => {
           {/* Gallery Header */}
           <div className="flex items-center justify-between p-8 border-b border-gray-100">
             {/* Title */}
-            <h3 className="text-3xl font-bold text-primary">Gallery</h3>
+            <h3 className="text-3xl font-bold text-primary">{t("galleryTitle")}</h3>
 
             {/* Pagination Controls */}
             <div className="flex items-center space-x-4">

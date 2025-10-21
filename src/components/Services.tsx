@@ -6,6 +6,7 @@ import { useRef } from "react";
 import { Wind, Zap, ShieldCheck, Droplet, Video, Wrench, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import hvacImage from "@/assets/assets/hvac-service.jpg";
 import electricalImage from "@/assets/assets/electrical-service.jpg";
 import fireImage from "@/assets/assets/fire-safety-service.jpg";
@@ -16,55 +17,50 @@ import maintenanceImage from "@/assets/assets/maintenance-service.jpg";
 export const Services = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const t = useTranslations("services");
 
   const services = [
     {
       icon: Wind,
-      title: "HVAC Solutions",
-      description:
-        "Energy-efficient climate control systems designed for optimal comfort and minimized operational costs. Code-compliant installations with precision engineering.",
+      title: t("hvac.title"),
+      description: t("hvac.description"),
       image: hvacImage,
-      stats: "98% Efficiency",
+      stats: t("hvac.stats"),
     },
     {
       icon: Zap,
-      title: "Electrical Services",
-      description:
-        "Complete electrical infrastructure from high-voltage distribution to low-current systems, ensuring reliable and safe power delivery across all facilities.",
+      title: t("electrical.title"),
+      description: t("electrical.description"),
       image: electricalImage,
-      stats: "24/7 Support",
+      stats: t("electrical.stats"),
     },
     {
       icon: ShieldCheck,
-      title: "Fire Safety Solutions",
-      description:
-        "Comprehensive fire detection, suppression, and alarm systems that meet international safety standards and local building codes.",
+      title: t("fire.title"),
+      description: t("fire.description"),
       image: fireImage,
-      stats: "100% Compliant",
+      stats: t("fire.stats"),
     },
     {
       icon: Droplet,
-      title: "Plumbing Solutions",
-      description:
-        "Advanced water supply and drainage systems with modern fixtures, efficient water management, and sustainable plumbing technologies.",
+      title: t("plumbing.title"),
+      description: t("plumbing.description"),
       image: plumbingImage,
-      stats: "15+ Years",
+      stats: t("plumbing.stats"),
     },
     {
       icon: Video,
-      title: "Surveillance & Security",
-      description:
-        "Integrated CCTV and access control systems providing comprehensive security monitoring and protection for your assets.",
+      title: t("security.title"),
+      description: t("security.description"),
       image: securityImage,
-      stats: "360° Coverage",
+      stats: t("security.stats"),
     },
     {
       icon: Wrench,
-      title: "Maintenance Contracts",
-      description:
-        "Proactive maintenance programs ensuring peak performance, minimizing downtime, and extending the lifespan of all building systems.",
+      title: t("maintenance.title"),
+      description: t("maintenance.description"),
       image: maintenanceImage,
-      stats: "Proactive Care",
+      stats: t("maintenance.stats"),
     },
   ];
 
@@ -102,7 +98,7 @@ export const Services = () => {
             {/* Background large text */}
             <div className="absolute inset-0 flex items-center justify-center">
               <h2 className="text-[8rem] lg:text-[12rem] font-extrabold text-primary/5 tracking-tighter select-none">
-                SERVICES
+                {t("backgroundText")}
               </h2>
             </div>
 
@@ -110,12 +106,12 @@ export const Services = () => {
             <div className="relative z-10">
               {/* Badge */}
               <div className="inline-flex items-center px-4 py-2 rounded-full bg-accent/10 border border-accent/20 mb-6">
-                <span className="text-sm font-semibold text-accent">Professional Excellence</span>
+                <span className="text-sm font-semibold text-accent">{t("badge")}</span>
               </div>
 
               <h2 className="text-5xl lg:text-6xl font-extrabold mb-6 tracking-tight">
-                <span className="text-primary">OUR</span>{" "}
-                <span className="text-accent">SERVICES</span>
+                <span className="text-primary">{t("title1")}</span>{" "}
+                <span className="text-accent">{t("title2")}</span>
               </h2>
 
               {/* Decorative Line */}
@@ -124,8 +120,7 @@ export const Services = () => {
               </div>
 
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                Delivering comprehensive MEP solutions with cutting-edge technology and unmatched
-                expertise across Saudi Arabia's construction landscape.
+                {t("description")}
               </p>
             </div>
           </div>
@@ -199,7 +194,7 @@ export const Services = () => {
                       variant="outline"
                       className="w-full h-12 border-2 border-accent/20 text-accent hover:bg-accent hover:text-white hover:border-accent transition-all duration-300 group-hover:shadow-lg rounded-xl font-semibold">
                       <span className="flex items-center justify-center">
-                        Discover More
+                        {t("cta")}
                         <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
                       </span>
                     </Button>

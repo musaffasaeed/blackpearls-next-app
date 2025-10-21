@@ -3,31 +3,33 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Hammer, Clock, Lightbulb, Users } from "lucide-react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 export const About = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const t = useTranslations("about");
 
   const features = [
     {
       icon: Hammer,
-      title: "Expert Craftsmanship",
-      description: "Professional construction with attention to detail",
+      title: t("features.craftsmanship.title"),
+      description: t("features.craftsmanship.description"),
     },
     {
       icon: Clock,
-      title: "On-Time, Within Budget",
-      description: "Reliable project delivery and cost management",
+      title: t("features.budget.title"),
+      description: t("features.budget.description"),
     },
     {
       icon: Lightbulb,
-      title: "Innovative Solutions",
-      description: "Modern techniques and sustainable practices",
+      title: t("features.innovation.title"),
+      description: t("features.innovation.description"),
     },
     {
       icon: Users,
-      title: "Client-Centered Approach",
-      description: "Dedicated to exceeding client expectations",
+      title: t("features.client.title"),
+      description: t("features.client.description"),
     },
   ];
 
@@ -64,24 +66,10 @@ export const About = () => {
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6 }}
                 className="mb-8">
-                <h3 className="text-sm font-medium text-primary mb-2">About Us</h3>
-                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                  Building Your Vision, Crafting Your Future
-                </h2>
-                <p className="text-lg text-white/90 leading-relaxed">
-                  At Black Pearls Contracting, we take pride in delivering fully integrated
-                  construction solutions that begin with strong civil foundations and extend
-                  seamlessly into advanced MEP systems. From structural works, finishing, and
-                  infrastructure development to electrical, HVAC, plumbing, and safety systems —
-                  every element is designed and executed as part of a single, coordinated process.
-                </p>
-                <p className="text-lg text-white/90 leading-relaxed mt-4">
-                  Our multidisciplinary team of engineers, designers and technicians ensures smooth
-                  project delivery from concept to completion, whether it's for residential
-                  complexes, commercial spaces, or government facilities. By combining structural
-                  integrity with smart building services, we create environments that are not only
-                  durable and functional but also efficient, safe, and future-ready.
-                </p>
+                <h3 className="text-sm font-medium text-primary mb-2">{t("subtitle")}</h3>
+                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">{t("title")}</h2>
+                <p className="text-lg text-white/90 leading-relaxed">{t("description")}</p>
+                <p className="text-lg text-white/90 leading-relaxed mt-4">{t("description2")}</p>
               </motion.div>
 
               {/* Feature Icons */}

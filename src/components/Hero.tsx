@@ -18,6 +18,7 @@ import { motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -26,6 +27,7 @@ export const Hero = () => {
   const imageRef = useRef<HTMLDivElement>(null);
   const floatingElementsRef = useRef<HTMLDivElement>(null);
   const [currentBackgroundIndex, setCurrentBackgroundIndex] = useState(0);
+  const t = useTranslations("hero");
 
   // Unsplash construction and MEP related images with details
   const backgroundImages = [
@@ -119,7 +121,12 @@ export const Hero = () => {
     }
   };
 
-  const features = ["ISO 9001 Certified", "24/7 Support", "On-Time Delivery", "Quality Assurance"];
+  const features = [
+    t("features.iso"),
+    t("features.support"),
+    t("features.delivery"),
+    t("features.quality"),
+  ];
 
   return (
     <section
@@ -161,7 +168,7 @@ export const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               className="inline-flex items-center px-2 py-1 rounded-full bg-accent/10 border border-accent/20 mb-1">
-              <span className="text-sm font-medium text-primary">Established 2008</span>
+              <span className="text-sm font-medium text-primary">{t("badge")}</span>
             </motion.div>
 
             {/* Main Heading */}
@@ -170,8 +177,9 @@ export const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}>
               <h1 className="text-5xl md:text-6xl font-bold text-primary mb-6 leading-tight">
-                <span className="block text-accent">Black Pearls</span>
-                <span className="block text-primary">Contracting Est.</span>
+              {/* <span className="block text-accent">Black Pearls</span>
+              <span className="block text-primary">Contracting Est.</span> */}
+                <span className="block text-accent">{t("title")}</span>
               </h1>
             </motion.div>
 
@@ -181,10 +189,7 @@ export const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              Delivering structurally sound, efficient and future-ready buildings across
-              residential, commercial and government projects in Saudi Arabia. From civil
-              foundations to advanced MEP systems, we create cohesive, compliant, and crafted
-              solutions.
+              {t("description")}
             </motion.p>
 
             {/* Features List */}
@@ -211,14 +216,14 @@ export const Hero = () => {
                 size="lg"
                 className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-8 py-6 shadow-lg hover:shadow-xl transition-all duration-300"
                 onClick={() => scrollToSection("#contact")}>
-                Get Project Quote <ArrowRight className="ml-2 h-5 w-5" />
+                {t("cta.quote")} <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
               <Button
                 size="lg"
                 variant="outline"
                 className="border-primary text-primary hover:bg-primary hover:text-primary-foreground text-lg px-8 py-6 shadow-lg hover:shadow-xl transition-all duration-300"
                 onClick={() => scrollToSection("#projects")}>
-                View Our Work <PlayCircle className="ml-2 h-5 w-5" />
+                {t("cta.work")} <PlayCircle className="ml-2 h-5 w-5" />
               </Button>
             </motion.div>
           </div>

@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { useTranslations } from "next-intl";
 
 interface FormData {
   name: string;
@@ -20,6 +21,7 @@ export const ContactForm = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const { toast } = useToast();
+  const t = useTranslations("contact");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
@@ -56,22 +58,22 @@ export const ContactForm = () => {
   const contactInfo = [
     {
       icon: Mail,
-      title: "Email us",
-      subtitle: "Fast and Reliable Support",
+      title: t("contactInfo.email.title"),
+      subtitle: t("contactInfo.email.subtitle"),
       content: "info@blackpearls.sa",
       link: "mailto:info@blackpearls.sa",
     },
     {
       icon: MapPin,
-      title: "Our Address",
-      subtitle: "Come visit us in our office",
-      content: "Riyadh, Saudi Arabia",
+      title: t("contactInfo.address.title"),
+      subtitle: t("contactInfo.address.subtitle"),
+      content: t("contactInfo.address.content"),
       link: null,
     },
     {
       icon: Phone,
-      title: "Phone number",
-      subtitle: "Give us a call",
+      title: t("contactInfo.phone.title"),
+      subtitle: t("contactInfo.phone.subtitle"),
       content: "+966 XX XXX XXXX",
       link: "tel:+966XXXXXXXXX",
     },
@@ -103,19 +105,18 @@ export const ContactForm = () => {
             {/* Background large text */}
             <div className="absolute inset-0 flex items-center justify-center">
               <h2 className="text-[10rem] lg:text-[14rem] font-extrabold text-primary/10 tracking-tighter select-none">
-                CONTACT
+                {t("backgroundText")}
               </h2>
             </div>
             {/* Main heading */}
             <div className="relative z-10">
               <h2 className="text-4xl lg:text-5xl font-extrabold mb-4 tracking-tight pt-6">
-                <span className="text-primary">GET</span>{" "}
-                <span className="text-accent">IN TOUCH</span>
+                <span className="text-primary">{t("title1")}</span>{" "}
+                <span className="text-accent">{t("title2")}</span>
               </h2>
               <div className="w-16 h-1 bg-accent mx-auto mb-2"></div>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-                Ready to start your next project? Reach out to us for consultations, inquiries, or
-                to discuss your construction needs. We're here to help bring your vision to life.
+                {t("description")}
               </p>
             </div>
           </div>
@@ -165,11 +166,8 @@ export const ContactForm = () => {
                 <div className="w-20 h-20 rounded-full bg-accent flex items-center justify-center mx-auto mb-6">
                   <CheckCircle2 className="h-10 w-10 text-accent-foreground" />
                 </div>
-                <h3 className="text-2xl font-bold text-primary mb-3">Thank You!</h3>
-                <p className="text-muted-foreground">
-                  Your message has been sent successfully. We'll contact you within 24 hours to
-                  discuss your project.
-                </p>
+                <h3 className="text-2xl font-bold text-primary mb-3">{t("success.title")}</h3>
+                <p className="text-muted-foreground">{t("success.message")}</p>
               </div>
             ) : (
               <form
@@ -177,12 +175,12 @@ export const ContactForm = () => {
                 className="bg-white rounded-2xl p-8 shadow-md space-y-6 border border-border/20">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-primary mb-2">
-                    Full name
+                    {t("form.name.label")}
                   </label>
                   <Input
                     id="name"
-                    {...register("name", { required: "Name is required" })}
-                    placeholder="Enter your full name"
+                    {...register("name", { required: t("form.name.error") })}
+                    placeholder={t("form.name.placeholder")}
                     className={errors.name ? "border-destructive" : ""}
                   />
                   {errors.name && (
@@ -192,19 +190,19 @@ export const ContactForm = () => {
 
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-primary mb-2">
-                    Email address
+                    {t("form.email.label")}
                   </label>
                   <Input
                     id="email"
                     type="email"
                     {...register("email", {
-                      required: "Email is required",
+                      required: t("form.email.error"),
                       pattern: {
                         value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                        message: "Invalid email address",
+                        message: t("form.email.invalid"),
                       },
                     })}
-                    placeholder="Enter your email address"
+                    placeholder={t("form.email.placeholder")}
                     className={errors.email ? "border-destructive" : ""}
                   />
                   {errors.email && (
@@ -214,13 +212,13 @@ export const ContactForm = () => {
 
                 <div>
                   <label htmlFor="phone" className="block text-sm font-medium text-primary mb-2">
-                    Phone number
+                    {t("form.phone.label")}
                   </label>
                   <Input
                     id="phone"
                     type="tel"
-                    {...register("phone", { required: "Phone is required" })}
-                    placeholder="Enter your phone number"
+                    {...register("phone", { required: t("form.phone.error") })}
+                    placeholder={t("form.phone.placeholder")}
                     className={errors.phone ? "border-destructive" : ""}
                   />
                   {errors.phone && (
@@ -230,12 +228,12 @@ export const ContactForm = () => {
 
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-primary mb-2">
-                    Your message
+                    {t("form.message.label")}
                   </label>
                   <Textarea
                     id="message"
-                    {...register("message", { required: "Message is required" })}
-                    placeholder="Tell us about your project..."
+                    {...register("message", { required: t("form.message.error") })}
+                    placeholder={t("form.message.placeholder")}
                     rows={5}
                     className={errors.message ? "border-destructive" : ""}
                   />
@@ -249,7 +247,7 @@ export const ContactForm = () => {
                   size="lg"
                   className="w-full bg-accent hover:bg-accent/90 text-accent-foreground"
                   disabled={isSubmitting}>
-                  {isSubmitting ? "Sending..." : "Send Message"}
+                  {isSubmitting ? t("form.submitting") : t("form.submit")}
                   <Send className="ml-2 h-5 w-5" />
                 </Button>
               </form>

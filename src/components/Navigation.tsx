@@ -1,13 +1,33 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Menu, X, ArrowRight, Facebook, Linkedin, Instagram, Youtube } from "lucide-react";
+import {
+  Menu,
+  X,
+  ArrowRight,
+  Facebook,
+  Linkedin,
+  Instagram,
+  Youtube,
+  ChevronDown,
+  Languages,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import logo from "@/assets/bp-logo.png";
+import { LanguageSwitcher } from "./LanguageSwitcher";
+import { useTranslations } from "next-intl";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export const Navigation = () => {
+  const t = useTranslations("navigation");
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -20,12 +40,12 @@ export const Navigation = () => {
   }, []);
 
   const navLinks = [
-    { name: "About Us", href: "#about" },
-    { name: "Services", href: "#services" },
-    { name: "Portfolio", href: "#projects" },
-    { name: "Team", href: "#team" },
-    { name: "Testimonials", href: "#testimonials" },
-    { name: "Contact Us", href: "#contact" },
+    { name: t("about"), href: "#about" },
+    { name: t("services"), href: "#services" },
+    { name: t("portfolio"), href: "#projects" },
+    { name: t("team"), href: "#team" },
+    { name: t("testimonials"), href: "#testimonials" },
+    { name: t("contact"), href: "#contact" },
   ];
 
   const scrollToSection = (href: string) => {
@@ -105,10 +125,24 @@ export const Navigation = () => {
               </a>
             </div>
 
+            {/* Language Switcher */}
+            <LanguageSwitcher />
+
+            {/* Mobile Menu Button */}
+            <div className="lg:hidden flex items-center space-x-2">
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                aria-label="Toggle menu">
+                {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              </Button>
+            </div>
+
             <Button
               onClick={() => scrollToSection("#contact")}
               className="bg-accent hover:bg-accent/90 text-accent-foreground">
-              Get a quote <ArrowRight className="ml-2 h-4 w-4" />
+              {t("getQuote")} <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </div>
 

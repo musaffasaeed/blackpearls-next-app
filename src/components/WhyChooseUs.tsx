@@ -6,33 +6,35 @@ import { Building2, Users, Calendar, Award } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export const WhyChooseUs = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const t = useTranslations("whyChooseUs");
 
   const stats = [
     {
       icon: Building2,
       number: "500+",
-      label: "Projects Completed",
+      label: t("stats.projects"),
     },
     {
       icon: Users,
       number: "98%",
-      label: "Happy Clients",
+      label: t("stats.clients"),
     },
     {
       icon: Calendar,
       number: "15+",
-      label: "Years Experience",
+      label: t("stats.experience"),
     },
     {
       icon: Award,
       number: "50+",
-      label: "Expert Team Members",
+      label: t("stats.team"),
     },
   ];
 
@@ -74,20 +76,17 @@ export const WhyChooseUs = () => {
             {/* Background large text */}
             <div className="absolute inset-0 flex items-center justify-center">
               <h2 className="text-[10rem] lg:text-[12rem] font-extrabold text-white/10 tracking-tighter select-none">
-                Black Pearls
+                {t("backgroundText")}
               </h2>
             </div>
             {/* Main heading */}
             <div className="relative z-10">
               <h2 className="text-4xl lg:text-5xl font-extrabold mb-4 tracking-tight pt-6">
-                <span className="text-white/90">Why Choose</span>{" "}
-                <span className="text-accent">Black Pearls</span>
+                <span className="text-white/90">{t("title1")}</span>{" "}
+                <span className="text-accent">{t("title2")}</span>
               </h2>
               <div className="w-16 h-1 bg-accent mx-auto mb-2"></div>
-              <p className="text-lg text-white/60 max-w-2xl mx-auto mb-8">
-                Professional MEP solutions for HVAC, electrical, fire safety, and plumbing systems
-                across Saudi Arabia.
-              </p>
+              <p className="text-lg text-white/60 max-w-2xl mx-auto mb-8">{t("description")}</p>
             </div>
           </div>
         </motion.div>

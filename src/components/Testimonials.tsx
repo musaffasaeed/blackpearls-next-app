@@ -5,9 +5,11 @@ import { motion, useInView } from "framer-motion";
 import { Star } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Quote } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export const Testimonials = () => {
   const ref = useRef(null);
+  const t = useTranslations("testimonials");
 
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
@@ -15,25 +17,25 @@ export const Testimonials = () => {
 
   const testimonials = [
     {
-      name: "Fatima Al-Zahra",
+      name: t("testimonial1.name"),
       image: "/images/section-background.webp",
-      author: "Homeowner",
+      author: t("testimonial1.author"),
       rating: 5,
-      text: "Black Pearls Contracting exceeded our expectations. Their attention to detail and professional approach made our dream home a reality. Highly recommended!",
+      text: t("testimonial1.text"),
     },
     {
-      name: "Mohammed Al-Sheikh",
+      name: t("testimonial2.name"),
       image: "/images/hero-background.jpg",
-      author: "Project Manager",
+      author: t("testimonial2.author"),
       rating: 5,
-      text: "Outstanding workmanship and excellent project management. They delivered our commercial project on time and within budget. Truly professional team.",
+      text: t("testimonial2.text"),
     },
     {
-      name: "Noura Al-Mutairi",
+      name: t("testimonial3.name"),
       image: "/images/section-background.webp",
-      author: "Architect",
+      author: t("testimonial3.author"),
       rating: 5,
-      text: "The renovation work was exceptional. They transformed our old office into a modern, efficient workspace. Great communication throughout the project.",
+      text: t("testimonial3.text"),
     },
   ];
 
@@ -55,8 +57,8 @@ export const Testimonials = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           className="text-center mb-16">
-          <p className="text-accent font-semibold mb-2 uppercase tracking-wider">Testimonials</p>
-          <h2 className="text-4xl md:text-5xl font-bold">What Our Clients Say</h2>
+          <p className="text-accent font-semibold mb-2 uppercase tracking-wider">{t("subtitle")}</p>
+          <h2 className="text-4xl md:text-5xl font-bold">{t("title")}</h2>
         </motion.div>
 
         <div className="max-w-5xl mx-auto">

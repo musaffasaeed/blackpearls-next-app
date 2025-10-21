@@ -1,0 +1,143 @@
+{
+  "navigation": {
+    "about": "About Us",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "team": "Team",
+    "testimonials": "Testimonials",
+    "contact": "Contact Us",
+    "getQuote": "Get a quote"
+  },
+  "hero": {
+    "badge": "Established 2008",
+    "title": "Black Pearls Contracting Est.",
+    "description": "Delivering structurally sound, efficient and future-ready buildings across residential, commercial and government projects in Saudi Arabia. From civil foundations to advanced MEP systems, we create cohesive, compliant, and crafted solutions.",
+    "features": {
+      "iso": "ISO 9001 Certified",
+      "support": "24/7 Support",
+      "delivery": "On-Time Delivery",
+      "quality": "Quality Assurance"
+    },
+    "cta": {
+      "quote": "Get Project Quote",
+      "work": "View Our Work"
+    }
+  },
+  "about": {
+    "title": "Building Your Vision, Crafting Your Future",
+    "description": "At Black Pearls Contracting, we take pride in delivering fully integrated construction solutions that begin with strong civil foundations and extend seamlessly into advanced MEP systems. From structural works, finishing, and infrastructure development to electrical, HVAC, plumbing, and safety systems — every element is designed and executed as part of a single, coordinated process.",
+    "description2": "Our multidisciplinary team of engineers, designers and technicians ensures smooth project delivery from concept to completion, whether it's for residential complexes, commercial spaces, or government facilities. By combining structural integrity with smart building services, we create environments that are not only durable and functional but also efficient, safe, and future-ready.",
+    "features": {
+      "craftsmanship": "Expert Craftsmanship",
+      "craftsmanshipDesc": "Professional construction with attention to detail",
+      "budget": "On-Time, Within Budget",
+      "budgetDesc": "Reliable project delivery and cost management",
+      "innovation": "Innovative Solutions",
+      "innovationDesc": "Modern techniques and sustainable practices",
+      "client": "Client-Centered Approach",
+      "clientDesc": "Dedicated to exceeding client expectations"
+    }
+  },
+  "services": {
+    "title": "OUR SERVICES",
+    "subtitle": "Professional Excellence",
+    "description": "Delivering comprehensive MEP solutions with cutting-edge technology and unmatched expertise across Saudi Arabia's construction landscape.",
+    "items": {
+      "hvac": {
+        "title": "HVAC Solutions",
+        "description": "Energy-efficient climate control systems designed for optimal comfort and minimized operational costs. Code-compliant installations with precision engineering.",
+        "stats": "98% Efficiency"
+      },
+      "electrical": {
+        "title": "Electrical Services",
+        "description": "Complete electrical infrastructure from high-voltage distribution to low-current systems, ensuring reliable and safe power delivery across all facilities.",
+        "stats": "24/7 Support"
+      },
+      "fire": {
+        "title": "Fire Safety Solutions",
+        "description": "Comprehensive fire detection, suppression, and alarm systems that meet international safety standards and local building codes.",
+        "stats": "100% Compliant"
+      },
+      "plumbing": {
+        "title": "Plumbing Solutions",
+        "description": "Advanced water supply and drainage systems with modern fixtures, efficient water management, and sustainable plumbing technologies.",
+        "stats": "15+ Years"
+      },
+      "security": {
+        "title": "Surveillance & Security",
+        "description": "Integrated CCTV and access control systems providing comprehensive security monitoring and protection for your assets.",
+        "stats": "360° Coverage"
+      },
+      "maintenance": {
+        "title": "Maintenance Contracts",
+        "description": "Proactive maintenance programs ensuring peak performance, minimizing downtime, and extending the lifespan of all building systems.",
+        "stats": "Proactive Care"
+      }
+    },
+    "cta": "Discover More"
+  },
+  "whyChooseUs": {
+    "title": "Why Choose Black Pearls",
+    "description": "Professional MEP solutions for HVAC, electrical, fire safety, and plumbing systems across Saudi Arabia.",
+    "stats": {
+      "projects": "Projects Completed",
+      "clients": "Happy Clients",
+      "experience": "Years Experience",
+      "team": "Expert Team Members"
+    }
+  },
+  "gallery": {
+    "title": "PROJECT GALLERY",
+    "description": "Explore our portfolio of completed projects showcasing excellence in construction, MEP systems, and innovative building solutions across Saudi Arabia."
+  },
+  "testimonials": {
+    "title": "What Our Clients Say",
+    "description": "Hear from satisfied clients who have experienced our MEP excellence"
+  },
+  "team": {
+    "title": "Building with Excellence",
+    "description": "Our team of experienced professionals brings excellence and innovation to every project. With years of expertise in construction and project management, we ensure your vision becomes reality.",
+    "cta": "Let's Talk Now"
+  },
+  "contact": {
+    "title": "GET IN TOUCH",
+    "description": "Ready to start your next project? Reach out to us for consultations, inquiries, or to discuss your construction needs. We're here to help bring your vision to life.",
+    "form": {
+      "name": "Full name",
+      "email": "Email address",
+      "phone": "Phone number",
+      "message": "Your message",
+      "submit": "Send Message",
+      "sending": "Sending...",
+      "success": "Thank You!",
+      "successMessage": "Your message has been sent successfully. We'll contact you within 24 hours to discuss your project."
+    },
+    "info": {
+      "email": "Email us",
+      "emailDesc": "Fast and Reliable Support",
+      "address": "Our Address",
+      "addressDesc": "Come visit us in our office",
+      "phone": "Phone number",
+      "phoneDesc": "Give us a call"
+    }
+  },
+  "footer": {
+    "description": "Delivering fully integrated construction solutions that begin with strong civil foundations and extend seamlessly into advanced MEP systems across Saudi Arabia.",
+    "quickLinks": "Quick Links",
+    "ourServices": "Our Services",
+    "contactUs": "Contact Us",
+    "rights": "All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "cookies": "Cookie Policy"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "learnMore": "Learn More",
+    "viewDetails": "View Details",
+    "readMore": "Read More",
+    "showLess": "Show Less"
+  }
+}
