@@ -1,0 +1,25 @@
+{
+  "name": "Black Pearls Contracting",
+  "short_name": "Black Pearls",
+  "description": "Leading MEP contractor in Saudi Arabia delivering integrated civil and MEP construction solutions",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1a1a1a",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["construction", "business", "utilities"],
+  "lang": "en",
+  "dir": "ltr"
+}
