@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Star, Quote } from "lucide-react";
+import Image from "next/image";
 
 export const ClientTestimonials = () => {
   const ref = useRef(null);
@@ -124,9 +125,11 @@ export const ClientTestimonials = () => {
 
               {/* Client Info */}
               <div className="flex items-center space-x-4">
-                <img
+                <Image
                   src={testimonial.image}
                   alt={testimonial.name}
+                  width={48}
+                  height={48}
                   className="w-12 h-12 rounded-full object-cover border-2 border-accent/20"
                 />
                 <div>
@@ -142,4 +145,3 @@ export const ClientTestimonials = () => {
     </section>
   );
 };
-

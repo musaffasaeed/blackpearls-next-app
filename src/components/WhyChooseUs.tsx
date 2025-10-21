@@ -5,6 +5,7 @@ import { motion, useInView } from "framer-motion";
 import { Building2, Users, Calendar, Award } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -41,10 +42,12 @@ export const WhyChooseUs = () => {
       className="section-padding bg-primary text-primary-foreground relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
-        <img
+        <Image
           src="/images/section-background.webp"
           alt="Architectural blueprint pattern"
-          className="w-full h-full object-cover"
+          fill
+          className="object-cover"
+          sizes="100vw"
         />
       </div>
 

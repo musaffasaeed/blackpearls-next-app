@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, MapPin } from "lucide-react";
+import Image from "next/image";
 
 interface Project {
   id: number;
@@ -142,9 +143,11 @@ export const Projects = () => {
               onClick={() => setSelectedProject(project)}>
               <div className="project-card">
                 <div className="relative overflow-hidden">
-                  <img
+                  <Image
                     src={project.image}
                     alt={project.title}
+                    width={400}
+                    height={256}
                     className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -189,9 +192,11 @@ export const Projects = () => {
                   </DialogDescription>
                 </DialogHeader>
                 <div className="space-y-6">
-                  <img
+                  <Image
                     src={selectedProject.image}
                     alt={selectedProject.title}
+                    width={800}
+                    height={320}
                     className="w-full h-80 object-cover rounded-xl"
                   />
                   <div className="grid md:grid-cols-2 gap-6">

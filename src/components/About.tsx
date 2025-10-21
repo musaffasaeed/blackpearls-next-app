@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Hammer, Clock, Lightbulb, Users } from "lucide-react";
+import Image from "next/image";
 
 export const About = () => {
   const ref = useRef(null);
@@ -41,9 +42,11 @@ export const About = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="relative">
             <div className="relative">
-              <img
+              <Image
                 src="/images/section-background.webp"
                 alt="Professional construction team member"
+                width={400}
+                height={384}
                 className="w-full h-96 object-cover rounded-full shadow-lg"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-accent/20 to-transparent rounded-full" />

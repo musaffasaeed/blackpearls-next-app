@@ -6,6 +6,7 @@ import { useRef, useState, useEffect } from "react";
 import { Camera, ArrowRight, ChevronLeft, ChevronRight, ZoomIn, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import Image from "next/image";
 
 export const Gallery = () => {
   const ref = useRef(null);
@@ -190,16 +191,21 @@ export const Gallery = () => {
                     className="group cursor-pointer"
                     onClick={() => handleImageClick(image)}>
                     <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 bg-gray-100">
-                      <motion.img
-                        src={image}
-                        alt={`Construction project ${startIndex + index + 1}`}
-                        className="w-full h-full object-cover"
+                      <motion.div
                         whileHover={{
                           scale: 1.1,
                           transition: { duration: 0.6, ease: "easeOut" },
                         }}
                         transition={{ duration: 0.3 }}
-                      />
+                        className="w-full h-full">
+                        <Image
+                          src={image}
+                          alt={`Construction project ${startIndex + index + 1}`}
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        />
+                      </motion.div>
 
                       {/* Enhanced Overlay */}
                       <motion.div
@@ -248,7 +254,7 @@ export const Gallery = () => {
             {/* Close Button */}
             <motion.button
               onClick={closeDialog}
-              className="absolute top-4 right-4 z-50 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-colors duration-200"
+              className="absolute top-4 right-4 z-50 border-0 outline-none focus:outline-none focus:ring-0 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-colors duration-200"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}>
               <X className="h-6 w-6" />
@@ -262,10 +268,13 @@ export const Gallery = () => {
               transition={{ duration: 0.3 }}
               className="relative rounded-lg overflow-hidden shadow-2xl">
               {selectedImage && (
-                <img
+                <Image
                   src={selectedImage}
                   alt="Full size construction project"
+                  width={1200}
+                  height={800}
                   className="w-full h-auto max-h-[80vh] object-contain bg-white"
+                  priority
                 />
               )}
             </motion.div>

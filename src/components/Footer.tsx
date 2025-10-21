@@ -1,4 +1,5 @@
 import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from "lucide-react";
+import Image from "next/image";
 import logo from "@/assets/bp-logo.png";
 
 export const Footer = () => {
@@ -36,10 +37,12 @@ export const Footer = () => {
           {/* Company Info */}
           <div>
             <div className="flex items-center space-x-3 mb-6">
-              <img
+              <Image
                 src={logo}
                 alt="Black Pearls Contracting"
                 className="h-12 w-auto brightness-0 invert"
+                width={48}
+                height={48}
               />
               <span className="text-lg font-bold">Black Pearls</span>
             </div>

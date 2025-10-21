@@ -22,16 +22,16 @@ export default function Home() {
       <Navigation />
       <main>
         <Hero />
-        <PartnersSection />
+        <ClientsSection />
         <AboutSection />
         <Services />
         <WhyChooseUs />
+        <PartnersSection />
         <Gallery />
         <Testimonials />
         <Team />
         <FAQ />
         <ContactForm />
-        <ClientsSection />
       </main>
       <Footer />
     </div>

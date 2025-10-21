@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import Image from "next/image";
 
 const PartnersSection = () => {
   // Partner logos array
@@ -13,6 +14,51 @@ const PartnersSection = () => {
   return (
     <section className="pb-20 pt-10 bg-white relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
+        {/* Header Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16">
+          <div className="relative">
+            {/* Background Pattern */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="w-96 h-96 bg-gradient-to-br from-accent/5 to-primary/5 rounded-full blur-3xl" />
+            </div>
+
+            {/* Background large text */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <h2 className="text-[6rem] lg:text-[10rem] font-extrabold text-primary/5 tracking-tighter select-none">
+                PARTNERS
+              </h2>
+            </div>
+
+            {/* Main heading */}
+            <div className="relative z-10">
+              {/* Badge */}
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-accent/10 border border-accent/20 mb-6">
+                <span className="text-sm font-semibold text-accent">Trusted Partnerships</span>
+              </div>
+
+              <h2 className="text-4xl lg:text-5xl font-extrabold mb-6 tracking-tight">
+                <span className="text-primary">OUR</span>{" "}
+                <span className="text-accent">PARTNERS</span>
+              </h2>
+
+              {/* Decorative Line */}
+              <div className="flex items-center justify-center mb-6">
+                <div className="w-16 h-1 bg-accent rounded-full mx-4" />
+              </div>
+
+              <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+                Collaborating with industry leaders to deliver exceptional construction solutions
+                and cutting-edge technology.
+              </p>
+            </div>
+          </div>
+        </motion.div>
+
         {/* Partners Slider */}
         <motion.div
           className="relative"
@@ -73,9 +119,11 @@ const PartnersSection = () => {
 
                     {/* Logo Container */}
                     <div className="relative z-10 flex items-center justify-center h-full w-full bg-transparent">
-                      <img
+                      <Image
                         src={partner.src}
                         alt={partner.alt}
+                        width={120}
+                        height={60}
                         className="max-h-full max-w-full object-contain transition-all duration-700 group-hover:scale-110"
                         loading="lazy"
                       />

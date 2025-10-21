@@ -5,6 +5,7 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Wind, Zap, ShieldCheck, Droplet, Video, Wrench, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 import hvacImage from "@/assets/assets/hvac-service.jpg";
 import electricalImage from "@/assets/assets/electrical-service.jpg";
 import fireImage from "@/assets/assets/fire-safety-service.jpg";
@@ -147,10 +148,12 @@ export const Services = () => {
 
                 {/* Image Section */}
                 <div className="relative h-56 overflow-hidden">
-                  <img
+                  <Image
                     src={service.image}
                     alt={service.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                    width={400}
+                    height={224}
                   />
 
                   {/* Gradient Overlay */}

@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Menu, X, ArrowRight, Facebook, Linkedin, Instagram, Youtube } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import logo from "@/assets/bp-logo.png";
 
 export const Navigation = () => {
@@ -51,7 +52,13 @@ export const Navigation = () => {
               scrollToSection("#home");
             }}
             className="flex items-center space-x-3">
-            <img src={logo} alt="Black Pearls Contracting" className="h-12 w-auto" />
+            <Image
+              src={logo}
+              alt="Black Pearls Contracting"
+              className="h-12 w-auto"
+              width={48}
+              height={48}
+            />
             <span className="text-xl font-bold text-primary">Black Pearls</span>
           </a>
 

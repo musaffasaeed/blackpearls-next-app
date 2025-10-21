@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -209,9 +210,11 @@ const AboutSection = () => {
           {/* Left - Image */}
           <div ref={imageRef} className="relative">
             <div className="rounded-2xl overflow-hidden shadow-2xl border border-gray-100">
-              <img
+              <Image
                 src="https://images.unsplash.com/photo-1564182873128-5052241315bb?q=80&w=1200&h=1200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="MEP contractor working on HVAC and electrical systems"
+                width={600}
+                height={400}
                 className="w-full h-full object-cover"
               />
             </div>

@@ -17,6 +17,7 @@ import {
 import { motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -129,10 +130,13 @@ export const Hero = () => {
       <div className="absolute inset-0 z-0">
         {/* Main Background Image */}
         <div ref={imageRef} className="absolute inset-0">
-          <img
+          <Image
             src="/images/hero-background.jpg"
             alt="Modern construction site with advanced MEP systems"
-            className="w-full h-full object-cover opacity-40"
+            fill
+            className="object-cover opacity-40"
+            priority
+            sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-transparent" />
         </div>
@@ -228,15 +232,21 @@ export const Hero = () => {
             {/* Main Image Container */}
             <div className="relative group">
               <div className="relative rounded-3xl bg-white/80 overflow-hidden shadow-2xl">
-                <motion.img
+                <motion.div
                   key={currentBackgroundIndex}
-                  src={backgroundImages[currentBackgroundIndex].image}
-                  alt="Modern construction and MEP systems"
-                  className="w-full h-[500px] object-cover"
                   initial={{ opacity: 0, scale: 1.1 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 1 }}
-                />
+                  className="w-full h-[500px] relative">
+                  <Image
+                    src={backgroundImages[currentBackgroundIndex].image}
+                    alt="Modern construction and MEP systems"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    priority={currentBackgroundIndex === 0}
+                  />
+                </motion.div>
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent" />
 
                 {/* Details Overlay - Always Visible */}

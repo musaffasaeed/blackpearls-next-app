@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 export const Team = () => {
   const ref = useRef(null);
@@ -70,9 +71,11 @@ export const Team = () => {
                 transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
                 className="team-card text-center">
                 <div className="relative mb-4">
-                  <img
+                  <Image
                     src={expert.image}
                     alt={expert.name}
+                    width={96}
+                    height={96}
                     className="w-24 h-24 rounded-full object-cover mx-auto"
                   />
                 </div>

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import Image from "next/image";
 
 const ClientsSection = () => {
   // Client logos array
@@ -101,9 +102,11 @@ const ClientsSection = () => {
 
                     {/* Logo Image */}
                     <div className="relative z-10 flex items-center justify-center h-full w-full">
-                      <img
+                      <Image
                         src={client.src}
                         alt={client.alt}
+                        width={120}
+                        height={60}
                         className="max-h-full max-w-full object-contain transition-all duration-500 group-hover:scale-110"
                         loading="lazy"
                       />
