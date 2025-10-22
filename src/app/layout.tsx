@@ -103,11 +103,13 @@ export default async function RootLayout({
     url: "https://blackpearls.sa",
     logo: "https://blackpearls.sa/images/hero-background.jpg",
     image: "https://blackpearls.sa/images/hero-background.jpg",
-    telephone: "+966 XX XXX XXXX",
-    email: "info@blackpearls.sa",
+    telephone: "+966507116423",
+    email: "muhammadmusaffa@theblackpearlsa.com",
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Riyadh",
+      streetAddress: "Mishrifah District, 6740",
+      addressLocality: "Jeddah",
+      postalCode: "23331",
       addressCountry: "SA",
     },
     sameAs: [

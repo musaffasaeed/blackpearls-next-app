@@ -60,22 +60,22 @@ export const ContactForm = () => {
       icon: Mail,
       title: t("contactInfo.email.title"),
       subtitle: t("contactInfo.email.subtitle"),
-      content: "info@blackpearls.sa",
-      link: "mailto:info@blackpearls.sa",
+      content: "muhammadmusaffa@theblackpearlsa.com",
+      link: "mailto:muhammadmusaffa@theblackpearlsa.com",
     },
     {
       icon: MapPin,
       title: t("contactInfo.address.title"),
       subtitle: t("contactInfo.address.subtitle"),
-      content: t("contactInfo.address.content"),
+      content: "Mishrifah District, 6740, Jeddah 23331, Saudi Arabia",
       link: null,
     },
     {
       icon: Phone,
       title: t("contactInfo.phone.title"),
       subtitle: t("contactInfo.phone.subtitle"),
-      content: "+966 XX XXX XXXX",
-      link: "tel:+966XXXXXXXXX",
+      content: "+966507116423",
+      link: "tel:+966507116423",
     },
   ];
 

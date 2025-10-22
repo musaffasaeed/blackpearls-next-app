@@ -2,8 +2,7 @@
   "navigation": {
     "about": "About Us",
     "services": "Services",
-    "portfolio": "Portfolio",
-    "team": "Team",
+    "ceo": "Leadership",
     "testimonials": "Testimonials",
     "contact": "Contact Us",
     "getQuote": "Get a quote"
@@ -13,7 +12,6 @@
     "title": "Black Pearls Contracting Est.",
     "description": "Delivering structurally sound, efficient and future-ready buildings across residential, commercial and government projects in Saudi Arabia. From civil foundations to advanced MEP systems, we create cohesive, compliant, and crafted solutions.",
     "features": {
-      "iso": "ISO 9001 Certified",
       "support": "24/7 Support",
       "delivery": "On-Time Delivery",
       "quality": "Quality Assurance"
@@ -125,17 +123,19 @@
       "text": "The renovation work was exceptional. They transformed our old office into a modern, efficient workspace. Great communication throughout the project."
     }
   },
-  "team": {
-    "subtitle": "Meet Our Experts",
-    "title": "Building with Excellence",
-    "description": "Our team of experienced professionals brings excellence and innovation to every project. With years of expertise in construction and project management, we ensure your vision becomes reality.",
-    "expert1": {
-      "name": "Ahmed Al-Rashid",
-      "title": "Site Supervisor"
+  "ceo": {
+    "subtitle": "Meet Our Leader",
+    "description": "Under visionary leadership, Black Pearls Contracting has grown to become Saudi Arabia's premier MEP contractor, delivering exceptional construction solutions across the kingdom.",
+    "name": "Muhammad Musaffa",
+    "title": "Chief Executive Officer",
+    "bio": "With over 15 years of experience in construction and engineering, Muhammad Musaffa leads Black Pearls Contracting with a vision of excellence, innovation, and sustainable growth. His leadership has been instrumental in establishing the company as a trusted partner for major projects across Saudi Arabia.",
+    "experience": {
+      "title": "Professional Experience",
+      "content": "15+ years in construction management, MEP systems design, and project execution across residential, commercial, and government sectors."
     },
-    "expert2": {
-      "name": "Sarah Al-Mansouri",
-      "title": "Project Manager"
+    "achievements": {
+      "title": "Key Achievements",
+      "content": "Led the successful completion of 200+ projects and built a team of 50+ skilled professionals."
     },
     "cta": "Let's Talk Now"
   },

@@ -30,7 +30,7 @@ export const FAQ = () => {
     {
       question: "What certifications and standards do you follow?",
       answer:
-        "We are ISO 9001 certified and comply with NFPA, SASO, and Saudi building codes. Our team consists of certified engineers and technicians who maintain international standards in all our projects.",
+        "We comply with NFPA, SASO, and Saudi building codes. Our team consists of certified engineers and technicians who maintain international standards in all our projects.",
     },
     {
       question: "How long does a typical MEP project take?",

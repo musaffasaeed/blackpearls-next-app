@@ -13,21 +13,24 @@ import {
   Zap,
   Droplet,
   ShieldCheck,
+  ArrowUp,
 } from "lucide-react";
 import { motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export const Hero = () => {
+  const t = useTranslations("hero");
   const heroRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
   const floatingElementsRef = useRef<HTMLDivElement>(null);
   const [currentBackgroundIndex, setCurrentBackgroundIndex] = useState(0);
-  const t = useTranslations("hero");
+  const [isVideoDialogOpen, setIsVideoDialogOpen] = useState(false);
 
   // Unsplash construction and MEP related images with details
   const backgroundImages = [
@@ -133,6 +136,44 @@ export const Hero = () => {
       id="home"
       ref={heroRef}
       className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-white via-muted/30 to-white">
+      {/* Scroll to Top Button */}
+      <motion.div
+        className="fixed bottom-8 right-8 z-20"
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8, delay: 1 }}>
+        <Button
+          variant="default"
+          size="icon"
+          className="w-12 h-12 rounded-full bg-accent hover:bg-accent/90 text-accent-foreground"
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
+          <ArrowUp className="w-6 h-6 text-white" />
+        </Button>
+      </motion.div>
+
+      {/* Video Dialog */}
+      <Dialog open={isVideoDialogOpen} onOpenChange={setIsVideoDialogOpen}>
+        <DialogContent className="max-w-4xl w-full p-0 bg-black border-none rounded-lg overflow-hidden">
+          <DialogHeader className="p-4 bg-gradient-to-r from-accent to-orange-500">
+            <div className="flex items-center justify-between">
+              <DialogTitle className="text-white text-xl font-bold">Watch Our Story </DialogTitle>
+            </div>
+          </DialogHeader>
+          {/* Video Player - Replace VIDEO_ID_HERE with your actual YouTube video ID */}
+          <div className="relative w-full bg-gray-800" style={{ paddingBottom: "56.25%" }}>
+            <iframe
+              className="absolute top-0 left-0 w-full h-full"
+              src="https://www.youtube.com/embed/VIDEO_ID_HERE?autoplay=1&rel=0&modestbranding=1&showinfo=0"
+              title={t("hero.video.title")}
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              loading="lazy"
+            />
+          </div>
+        </DialogContent>
+      </Dialog>
+
       {/* Background Elements */}
       <div className="absolute inset-0 z-0">
         {/* Main Background Image */}
@@ -177,7 +218,7 @@ export const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}>
               <h1 className="text-5xl md:text-6xl font-bold text-primary mb-6 leading-tight">
-              {/* <span className="block text-accent">Black Pearls</span>
+                {/* <span className="block text-accent">Black Pearls</span>
               <span className="block text-primary">Contracting Est.</span> */}
                 <span className="block text-accent">{t("title")}</span>
               </h1>
@@ -222,7 +263,7 @@ export const Hero = () => {
                 size="lg"
                 variant="outline"
                 className="border-primary text-primary hover:bg-primary hover:text-primary-foreground text-lg px-8 py-6 shadow-lg hover:shadow-xl transition-all duration-300"
-                onClick={() => scrollToSection("#projects")}>
+                onClick={() => setIsVideoDialogOpen(true)}>
                 {t("cta.work")} <PlayCircle className="ml-2 h-5 w-5" />
               </Button>
             </motion.div>

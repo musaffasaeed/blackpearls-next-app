@@ -125,9 +125,9 @@ export const Footer = () => {
                 <Phone className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
                 <div>
                   <a
-                    href="tel:+966XXXXXXXXX"
+                    href="tel:+966507116423"
                     className="text-primary-foreground/80 hover:text-accent transition-colors">
-                    +966 XX XXX XXXX
+                    +966507116423
                   </a>
                 </div>
               </li>
@@ -135,16 +135,18 @@ export const Footer = () => {
                 <Mail className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
                 <div>
                   <a
-                    href="mailto:info@blackpearls.sa"
+                    href="mailto:muhammadmusaffa@theblackpearlsa.com"
                     className="text-primary-foreground/80 hover:text-accent transition-colors">
-                    info@blackpearls.sa
+                    muhammadmusaffa@theblackpearlsa.com
                   </a>
                 </div>
               </li>
               <li className="flex items-start space-x-3">
                 <MapPin className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
                 <div>
-                  <span className="text-primary-foreground/80">Riyadh, Saudi Arabia</span>
+                  <span className="text-primary-foreground/80">
+                    Mishrifah District, 6740, Jeddah 23331, Saudi Arabia
+                  </span>
                 </div>
               </li>
             </ul>

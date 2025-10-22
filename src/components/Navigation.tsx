@@ -42,8 +42,6 @@ export const Navigation = () => {
   const navLinks = [
     { name: t("about"), href: "#about" },
     { name: t("services"), href: "#services" },
-    { name: t("portfolio"), href: "#projects" },
-    { name: t("team"), href: "#team" },
     { name: t("testimonials"), href: "#testimonials" },
     { name: t("contact"), href: "#contact" },
   ];
@@ -100,33 +98,23 @@ export const Navigation = () => {
             {/* Social Media Icons */}
             <div className="flex items-center space-x-3 ml-6">
               <a
-                href="#"
+                href="https://www.facebook.com/people/The-Black-Pearls/61555944485983/"
+                target="_blank"
                 aria-label="Facebook"
                 className="w-8 h-8 rounded-full bg-muted hover:bg-accent flex items-center justify-center transition-colors">
                 <Facebook className="h-4 w-4 text-primary" />
               </a>
               <a
-                href="#"
+                href="http://linkedin.com/company/theblackpearl"
+                target="_blank"
                 aria-label="LinkedIn"
                 className="w-8 h-8 rounded-full bg-muted hover:bg-accent flex items-center justify-center transition-colors">
                 <Linkedin className="h-4 w-4 text-primary" />
               </a>
-              <a
-                href="#"
-                aria-label="Instagram"
-                className="w-8 h-8 rounded-full bg-muted hover:bg-accent flex items-center justify-center transition-colors">
-                <Instagram className="h-4 w-4 text-primary" />
-              </a>
-              <a
-                href="#"
-                aria-label="YouTube"
-                className="w-8 h-8 rounded-full bg-muted hover:bg-accent flex items-center justify-center transition-colors">
-                <Youtube className="h-4 w-4 text-primary" />
-              </a>
             </div>
 
             {/* Language Switcher */}
-            {/* <LanguageSwitcher /> */}
+            <LanguageSwitcher />
 
             {/* Mobile Menu Button */}
             <div className="lg:hidden flex items-center space-x-2">
