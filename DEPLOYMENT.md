@@ -78,11 +78,21 @@ public_html/
 └── [public assets]
 ```
 
+## Local Development
+
+### Testing Locally
+
+```bash
+yarn dev
+```
+
+Then visit `http://localhost:3000` - it should automatically redirect to `http://localhost:3000/en`
+
 ## Testing Your Deployment
 
 ### 1. Test Root URL
 
-Visit your domain - it should redirect to `/en/`
+Visit your domain (e.g., `https://yourdomain.com`) - it should automatically redirect to `/en/`
 
 ### 2. Test Language Switching
 
