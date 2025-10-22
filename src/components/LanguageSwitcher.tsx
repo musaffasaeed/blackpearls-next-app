@@ -1,57 +1,87 @@
 "use client";
 
-import { useLocale, useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
 import { useRouter, usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
-import { Globe } from "lucide-react";
-import { useState } from "react";
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+} from "@/components/ui/dropdown-menu";
+import { Globe, ChevronDown } from "lucide-react";
 
 export const LanguageSwitcher = () => {
-  const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
-  const [isOpen, setIsOpen] = useState(false);
 
-  const switchLanguage = (newLocale: string) => {
-    // Remove the current locale from the pathname
-    const pathWithoutLocale = pathname.replace(`/${locale}`, "") || "/";
+  // Extract locale from pathname to ensure we get the correct current locale
+  const getCurrentLocale = () => {
+    const segments = pathname?.split("/") || [];
+    const firstSegment = segments[1];
+    const detectedLocale = firstSegment === "ar" ? "ar" : "en";
+    console.log("LanguageSwitcher - pathname:", pathname, "detected locale:", detectedLocale);
+    return detectedLocale;
+  };
+
+  const locale = getCurrentLocale();
+
+  const switchLanguage = (newLocale: "en" | "ar") => {
+    // Don't switch if already on the same locale
+    if (newLocale === locale) return;
+
+    // Extract the path without the current locale
+    let pathWithoutLocale = pathname || "/";
+
+    // Remove the current locale prefix if it exists
+    if (pathname?.startsWith(`/${locale}`)) {
+      pathWithoutLocale = pathname.replace(`/${locale}`, "") || "/";
+    }
+
+    // Ensure path starts with /
+    if (!pathWithoutLocale.startsWith("/")) {
+      pathWithoutLocale = "/" + pathWithoutLocale;
+    }
 
     // Navigate to the new locale
     router.push(`/${newLocale}${pathWithoutLocale}`);
-    setIsOpen(false);
   };
 
   return (
-    <div className="relative">
-      <Button
-        variant="ghost"
-        size="sm"
-        onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center space-x-2 text-primary hover:text-accent">
-        <Globe className="h-4 w-4" />
-        <span className="font-medium">{locale === "en" ? "English" : "العربية"}</span>
-      </Button>
+    <DropdownMenu dir={locale === "ar" ? "rtl" : "ltr"}>
+      <DropdownMenuTrigger asChild>
+        <Button
+          variant="ghost"
+          size="sm"
+          className="flex items-center space-x-2 hover:text-accent px-3 py-2 hover:bg-transparent">
+          <Globe className="h-4 w-4" />
+          <span className="text-sm font-medium">{locale === "en" ? "EN" : "AR"}</span>
+          <ChevronDown className="w-3 h-3" />
+        </Button>
+      </DropdownMenuTrigger>
 
-      {isOpen && (
-        <div className="absolute top-full right-0 mt-2 w-32 bg-white rounded-lg shadow-lg border border-gray-200 z-50">
-          <div className="py-1">
-            <button
-              onClick={() => switchLanguage("en")}
-              className={`w-full text-left px-4 py-2 text-sm hover:bg-gray-100 transition-colors ${
-                locale === "en" ? "bg-accent/10 text-accent font-medium" : "text-gray-700"
-              }`}>
-              English
-            </button>
-            <button
-              onClick={() => switchLanguage("ar")}
-              className={`w-full text-right px-4 py-2 text-sm hover:bg-gray-100 transition-colors ${
-                locale === "ar" ? "bg-accent/10 text-accent font-medium" : "text-gray-700"
-              }`}>
-              العربية
-            </button>
-          </div>
-        </div>
-      )}
-    </div>
+      <DropdownMenuContent
+        align="end"
+        className="w-44 bg-white border border-gray-200 rounded-lg shadow-lg z-[60] px-1 py-2">
+        <DropdownMenuItem
+          onClick={() => switchLanguage("en")}
+          className={`flex items-center space-x-3 px-3 py-2 rounded-md cursor-pointer transition-colors mb-2 ${
+            locale === "en" ? "bg-accent/10 text-accent" : "hover:bg-gray-50"
+          }`}>
+          {/* Simple EN label (replace with a flag if you like) */}
+          <span className="text-sm font-medium">English (US)</span>
+        </DropdownMenuItem>
+
+        <DropdownMenuItem
+          onClick={() => switchLanguage("ar")}
+          className={`flex items-center space-x-3 px-3 py-2 rounded-md cursor-pointer transition-colors ${
+            locale === "ar" ? "bg-accent/10 text-accent" : "hover:bg-gray-50"
+          }`}>
+          <span className="text-sm font-medium">العربية (SA)</span>
+        </DropdownMenuItem>
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 };
+
+export default LanguageSwitcher;

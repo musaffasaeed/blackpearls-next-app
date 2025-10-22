@@ -125,7 +125,6 @@ export const Hero = () => {
   };
 
   const features = [
-    t("features.iso"),
     t("features.support"),
     t("features.delivery"),
     t("features.quality"),
