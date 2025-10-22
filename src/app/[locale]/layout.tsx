@@ -3,10 +3,7 @@ import { getMessages } from "next-intl/server";
 import { Providers } from "@/components/providers";
 
 export async function generateStaticParams() {
-  return [
-    { locale: "en" },
-    { locale: "ar" },
-  ];
+  return [{ locale: "en" }, { locale: "ar" }];
 }
 
 export default async function LocaleLayout({
