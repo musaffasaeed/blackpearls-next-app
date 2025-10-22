@@ -20,7 +20,6 @@ export const LanguageSwitcher = () => {
     const segments = pathname?.split("/") || [];
     const firstSegment = segments[1];
     const detectedLocale = firstSegment === "ar" ? "ar" : "en";
-    console.log("LanguageSwitcher - pathname:", pathname, "detected locale:", detectedLocale);
     return detectedLocale;
   };
 

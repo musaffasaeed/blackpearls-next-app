@@ -124,11 +124,7 @@ export const Hero = () => {
     }
   };
 
-  const features = [
-    t("features.support"),
-    t("features.delivery"),
-    t("features.quality"),
-  ];
+  const features = [t("features.support"), t("features.delivery"), t("features.quality")];
 
   return (
     <section
@@ -163,7 +159,7 @@ export const Hero = () => {
             <iframe
               className="absolute top-0 left-0 w-full h-full"
               src="https://www.youtube.com/embed/VIDEO_ID_HERE?autoplay=1&rel=0&modestbranding=1&showinfo=0"
-              title={t("hero.video.title")}
+              title={t("video.title")}
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen

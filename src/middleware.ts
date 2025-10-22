@@ -8,10 +8,10 @@ export default createMiddleware({
   defaultLocale: "en",
 
   // Always show the locale in the URL
-  localePrefix: "as-needed",
+  localePrefix: "always",
 });
 
 export const config = {
   // Match only internationalized pathnames
-  matcher: ["/", "/(ar|en)/:path*", "/((?!api|_next|_vercel|.*\\..*).*)"],
+  matcher: ["/", "/(ar|en)/:path*"],
 };

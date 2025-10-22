@@ -17,8 +17,8 @@ export const Team = () => {
     title: t("title"),
     image: "/images/hero-background.jpg",
     bio: t("bio"),
-    experience: t("experience"),
-    achievements: t("achievements"),
+    experience: t("experience.content"),
+    achievements: t("achievements.content"),
   };
 
   const scrollToSection = (href: string) => {
@@ -29,7 +29,7 @@ export const Team = () => {
   };
 
   return (
-    <section id="ceo" ref={ref} className="section-padding white-bg">
+    <section id="team" ref={ref} className="section-padding white-bg">
       <div className="container-custom">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
