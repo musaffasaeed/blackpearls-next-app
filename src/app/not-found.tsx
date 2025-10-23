@@ -7,6 +7,8 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Home, ArrowLeft, Phone, CheckCircle } from "lucide-react";
 
+export const dynamic = "force-dynamic";
+
 export default function NotFound() {
   const router = useRouter();
 
@@ -33,7 +35,8 @@ export default function NotFound() {
               <Button
                 onClick={() => router.push("/en")}
                 size="lg"
-                className="bg-primary hover:bg-primary/90 text-white px-8 py-3">
+                className="bg-primary hover:bg-primary/90 text-white px-8 py-3"
+              >
                 <Home className="w-5 h-5 mr-2" />
                 Back to Home
               </Button>
@@ -42,7 +45,8 @@ export default function NotFound() {
                 onClick={() => router.back()}
                 variant="outline"
                 size="lg"
-                className="px-8 py-3">
+                className="px-8 py-3"
+              >
                 <ArrowLeft className="w-5 h-5 mr-2" />
                 Go Back
               </Button>

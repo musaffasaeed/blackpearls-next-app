@@ -1,10 +1,14 @@
-import { NextIntlClientProvider } from "next-intl";
-import { getMessages } from "next-intl/server";
+import { hasLocale, NextIntlClientProvider } from "next-intl";
+import { getMessages, setRequestLocale } from "next-intl/server";
 import { Providers } from "@/components/providers";
+import { routing } from "@/i18n/routing";
+import { notFound } from "next/navigation";
 
-export async function generateStaticParams() {
-  return [{ locale: "en" }, { locale: "ar" }];
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
 }
+
+export const dynamicParams = false;
 
 export default async function LocaleLayout({
   children,
@@ -14,6 +18,14 @@ export default async function LocaleLayout({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
+
+  if (!hasLocale(routing.locales, locale)) {
+    notFound();
+  }
+
+  // This enables static rendering and passes locale to request.ts
+  setRequestLocale(locale);
+
   const messages = await getMessages();
 
   return (
