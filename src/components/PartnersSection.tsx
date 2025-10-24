@@ -1,9 +1,12 @@
 import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 
 const PartnersSection = () => {
+  const t = useTranslations("partners");
+
   // Partner logos array
   const partnerLogos = Array.from({ length: 6 }, (_, i) => ({
     id: i + 1,
@@ -30,7 +33,7 @@ const PartnersSection = () => {
             {/* Background large text */}
             <div className="absolute inset-0 flex items-center justify-center">
               <h2 className="text-[6rem] lg:text-[10rem] font-extrabold text-primary/5 tracking-tighter select-none">
-                PARTNERS
+                {t("backgroundText")}
               </h2>
             </div>
 
@@ -38,12 +41,12 @@ const PartnersSection = () => {
             <div className="relative z-10">
               {/* Badge */}
               <div className="inline-flex items-center px-4 py-2 rounded-full bg-accent/10 border border-accent/20 mb-6">
-                <span className="text-sm font-semibold text-accent">Trusted Partnerships</span>
+                <span className="text-sm font-semibold text-accent">{t("badge")}</span>
               </div>
 
               <h2 className="text-4xl lg:text-5xl font-extrabold mb-6 tracking-tight">
-                <span className="text-primary">OUR</span>{" "}
-                <span className="text-accent">PARTNERS</span>
+                <span className="text-primary">{t("title1")}</span>{" "}
+                <span className="text-accent">{t("title2")}</span>
               </h2>
 
               {/* Decorative Line */}
@@ -52,8 +55,7 @@ const PartnersSection = () => {
               </div>
 
               <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-                Collaborating with industry leaders to deliver exceptional construction solutions
-                and cutting-edge technology.
+                {t("description")}
               </p>
             </div>
           </div>

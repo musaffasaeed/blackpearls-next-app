@@ -18,10 +18,43 @@
     },
     "cta": {
       "quote": "Get Project Quote",
-      "work": "View Our Work"
+      "work": "View Our Work",
+      "learnMore": "Learn More"
     },
     "video": {
       "title": "Black Pearls Contracting - Company Overview"
+    },
+    "slider": {
+      "modernConstruction": {
+        "title": "Modern Construction",
+        "subtitle": "Advanced Building Solutions",
+        "description": "State-of-the-art construction techniques with precision engineering and quality materials.",
+        "stats": "500+ Projects"
+      },
+      "hvacSystems": {
+        "title": "HVAC Systems",
+        "subtitle": "Climate Control Excellence",
+        "description": "Energy-efficient heating, ventilation, and air conditioning systems for optimal comfort.",
+        "stats": "98% Efficiency"
+      },
+      "electricalSolutions": {
+        "title": "Electrical Solutions",
+        "subtitle": "Power & Safety First",
+        "description": "Complete electrical infrastructure from high-voltage distribution to smart systems.",
+        "stats": "24/7 Support"
+      },
+      "plumbingSystems": {
+        "title": "Plumbing Systems",
+        "subtitle": "Water Management",
+        "description": "Advanced water supply and drainage systems with modern fixtures and sustainable technologies.",
+        "stats": "15+ Years"
+      },
+      "fireSafety": {
+        "title": "Fire Safety Solutions",
+        "subtitle": "Protection & Prevention",
+        "description": "Comprehensive fire detection, suppression, and alarm systems meeting international standards.",
+        "stats": "100% Compliant"
+      }
     }
   },
   "about": {
@@ -45,6 +78,33 @@
       "client": {
         "title": "Client-Centered Approach",
         "description": "Dedicated to exceeding client expectations"
+      }
+    }
+  },
+  "aboutSection": {
+    "subtitle": "About Us",
+    "title": "LEADING MEP CONTRACTOR DELIVERING END-TO-END SOLUTIONS",
+    "description": "At Black Pearls Contracting, we take pride in delivering fully integrated construction solutions that begin with strong civil foundations and extend seamlessly into advanced MEP systems. From structural works, finishing, and infrastructure development to electrical, HVAC, plumbing, and safety systems — every element is designed and executed as part of a single, coordinated process.",
+    "badge": {
+      "title": "MEP Excellence",
+      "services": "HVAC • Fire • Electrical • Plumbing"
+    },
+    "services": {
+      "certifiedExpertise": {
+        "title": "Certified Expertise",
+        "description": "MEP engineers and technicians certified to regional and international standards."
+      },
+      "transparentCommunication": {
+        "title": "Transparent Communication",
+        "description": "Clear project timelines, reporting, and single-point contact."
+      },
+      "safetyCompliance": {
+        "title": "Safety & Compliance",
+        "description": "NFPA, SASO, and Saudi building code aligned processes and documentation."
+      },
+      "qualityAssurance": {
+        "title": "Quality Assurance",
+        "description": "Commissioning, testing, and handover with complete documentation."
       }
     }
   },
@@ -222,6 +282,53 @@
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",
     "cookies": "Cookie Policy"
+  },
+  "partners": {
+    "backgroundText": "PARTNERS",
+    "badge": "Trusted Partnerships",
+    "title1": "OUR",
+    "title2": "PARTNERS",
+    "description": "Collaborating with industry leaders to deliver exceptional construction solutions and cutting-edge technology."
+  },
+  "faq": {
+    "subtitle": "FAQ",
+    "title1": "FREQUENTLY",
+    "title2": "ASKED QUESTIONS",
+    "description": "Find answers to common questions about our MEP services",
+    "questions": {
+      "mepServices": {
+        "question": "What MEP services do you provide?",
+        "answer": "We provide comprehensive MEP services including HVAC systems, electrical installations, fire safety systems, plumbing solutions, surveillance & security systems, and maintenance contracts. Our integrated approach ensures seamless coordination between all systems."
+      },
+      "projectTypes": {
+        "question": "Do you work on both residential and commercial projects?",
+        "answer": "Yes, we handle projects across all sectors including residential complexes, commercial buildings, government facilities, and industrial projects. Our team has experience with projects ranging from single-family homes to large-scale developments."
+      },
+      "certifications": {
+        "question": "What certifications and standards do you follow?",
+        "answer": "We comply with NFPA, SASO, and Saudi building codes. Our team consists of certified engineers and technicians who maintain international standards in all our projects."
+      },
+      "projectTimeline": {
+        "question": "How long does a typical MEP project take?",
+        "answer": "Project timelines vary based on scope and complexity. A typical residential project takes 3-6 months, while commercial projects can range from 6-18 months. We provide detailed timelines during the planning phase and maintain strict adherence to schedules."
+      },
+      "maintenanceServices": {
+        "question": "Do you provide maintenance services after project completion?",
+        "answer": "Yes, we offer comprehensive maintenance contracts to ensure optimal performance of all MEP systems. Our 24/7 support team provides preventive maintenance, emergency repairs, and system optimization services."
+      },
+      "deliveryProcess": {
+        "question": "What is your project delivery process?",
+        "answer": "Our process includes initial consultation, detailed planning and design, procurement, installation, testing and commissioning, and final handover with complete documentation. We maintain transparent communication throughout the project lifecycle."
+      },
+      "designServices": {
+        "question": "Do you offer design and engineering services?",
+        "answer": "Yes, our in-house engineering team provides complete design and engineering services. We create detailed MEP drawings, specifications, and 3D models to ensure accurate implementation and coordination with other trades."
+      },
+      "differentiation": {
+        "question": "What makes Black Pearls different from other MEP contractors?",
+        "answer": "Our integrated approach, certified expertise, 24/7 support, and commitment to quality set us apart. We combine structural integrity with smart building services, ensuring cohesive, compliant, and future-ready solutions for every project."
+      }
+    }
   },
   "common": {
     "loading": "Loading...",

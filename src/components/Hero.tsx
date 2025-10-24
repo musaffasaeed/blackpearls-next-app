@@ -37,49 +37,44 @@ export const Hero = () => {
     {
       image:
         "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1920&h=1080&fit=crop&crop=center",
-      title: "Modern Construction",
-      subtitle: "Advanced Building Solutions",
-      description:
-        "State-of-the-art construction techniques with precision engineering and quality materials.",
+      title: t("slider.modernConstruction.title"),
+      subtitle: t("slider.modernConstruction.subtitle"),
+      description: t("slider.modernConstruction.description"),
       icon: Building2,
-      stats: "500+ Projects",
+      stats: t("slider.modernConstruction.stats"),
     },
     {
       image:
         "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&h=1080&fit=crop&crop=center",
-      title: "HVAC Systems",
-      subtitle: "Climate Control Excellence",
-      description:
-        "Energy-efficient heating, ventilation, and air conditioning systems for optimal comfort.",
+      title: t("slider.hvacSystems.title"),
+      subtitle: t("slider.hvacSystems.subtitle"),
+      description: t("slider.hvacSystems.description"),
       icon: Wind,
-      stats: "98% Efficiency",
+      stats: t("slider.hvacSystems.stats"),
     },
     {
       image: "/images/services-images/construction15.jpg",
-      title: "Electrical Solutions",
-      subtitle: "Power & Safety First",
-      description:
-        "Complete electrical infrastructure from high-voltage distribution to smart systems.",
+      title: t("slider.electricalSolutions.title"),
+      subtitle: t("slider.electricalSolutions.subtitle"),
+      description: t("slider.electricalSolutions.description"),
       icon: Zap,
-      stats: "24/7 Support",
+      stats: t("slider.electricalSolutions.stats"),
     },
     {
       image: "/images/services-images/construction16.jpg",
-      title: "Plumbing Systems",
-      subtitle: "Water Management",
-      description:
-        "Advanced water supply and drainage systems with modern fixtures and sustainable technologies.",
+      title: t("slider.plumbingSystems.title"),
+      subtitle: t("slider.plumbingSystems.subtitle"),
+      description: t("slider.plumbingSystems.description"),
       icon: Droplet,
-      stats: "15+ Years",
+      stats: t("slider.plumbingSystems.stats"),
     },
     {
       image: "/images/services-images/construction21.jpg",
-      title: "Fire Safety",
-      subtitle: "Protection & Prevention",
-      description:
-        "Comprehensive fire detection, suppression, and alarm systems meeting international standards.",
+      title: t("slider.fireSafety.title"),
+      subtitle: t("slider.fireSafety.subtitle"),
+      description: t("slider.fireSafety.description"),
       icon: ShieldCheck,
-      stats: "100% Compliant",
+      stats: t("slider.fireSafety.stats"),
     },
   ];
 
@@ -323,7 +318,7 @@ export const Hero = () => {
                         size="sm"
                         className="bg-accent hover:bg-accent/90 text-accent-foreground"
                         onClick={() => scrollToSection("#services")}>
-                        Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                        {t("cta.learnMore")} <ArrowRight className="ml-2 h-4 w-4" />
                       </Button>
                     </div>
                   </div>

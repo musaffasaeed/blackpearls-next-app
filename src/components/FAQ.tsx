@@ -10,52 +10,46 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { useTranslations } from "next-intl";
 
 export const FAQ = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const t = useTranslations("faq");
 
   const faqs = [
     {
-      question: "What MEP services do you provide?",
-      answer:
-        "We provide comprehensive MEP services including HVAC systems, electrical installations, fire safety systems, plumbing solutions, surveillance & security systems, and maintenance contracts. Our integrated approach ensures seamless coordination between all systems.",
+      question: t("questions.mepServices.question"),
+      answer: t("questions.mepServices.answer"),
     },
     {
-      question: "Do you work on both residential and commercial projects?",
-      answer:
-        "Yes, we handle projects across all sectors including residential complexes, commercial buildings, government facilities, and industrial projects. Our team has experience with projects ranging from single-family homes to large-scale developments.",
+      question: t("questions.projectTypes.question"),
+      answer: t("questions.projectTypes.answer"),
     },
     {
-      question: "What certifications and standards do you follow?",
-      answer:
-        "We comply with NFPA, SASO, and Saudi building codes. Our team consists of certified engineers and technicians who maintain international standards in all our projects.",
+      question: t("questions.certifications.question"),
+      answer: t("questions.certifications.answer"),
     },
     {
-      question: "How long does a typical MEP project take?",
-      answer:
-        "Project timelines vary based on scope and complexity. A typical residential project takes 3-6 months, while commercial projects can range from 6-18 months. We provide detailed timelines during the planning phase and maintain strict adherence to schedules.",
+      question: t("questions.projectTimeline.question"),
+      answer: t("questions.projectTimeline.answer"),
     },
     {
-      question: "Do you provide maintenance services after project completion?",
-      answer:
-        "Yes, we offer comprehensive maintenance contracts to ensure optimal performance of all MEP systems. Our 24/7 support team provides preventive maintenance, emergency repairs, and system optimization services.",
+      question: t("questions.maintenanceServices.question"),
+      answer: t("questions.maintenanceServices.answer"),
     },
     {
-      question: "What is your project delivery process?",
-      answer:
-        "Our process includes initial consultation, detailed planning and design, procurement, installation, testing and commissioning, and final handover with complete documentation. We maintain transparent communication throughout the project lifecycle.",
+      question: t("questions.deliveryProcess.question"),
+      answer: t("questions.deliveryProcess.answer"),
     },
     {
-      question: "Do you offer design and engineering services?",
-      answer:
-        "Yes, our in-house engineering team provides complete design and engineering services. We create detailed MEP drawings, specifications, and 3D models to ensure accurate implementation and coordination with other trades.",
+      question: t("questions.designServices.question"),
+      answer: t("questions.designServices.answer"),
     },
     {
-      question: "What makes Black Pearls different from other MEP contractors?",
-      answer:
-        "Our integrated approach, certified expertise, 24/7 support, and commitment to quality set us apart. We combine structural integrity with smart building services, ensuring cohesive, compliant, and future-ready solutions for every project.",
+      question: t("questions.differentiation.question"),
+      answer: t("questions.differentiation.answer"),
     },
   ];
 
@@ -81,18 +75,20 @@ export const FAQ = () => {
             {/* Header */}
             <div className="flex items-center mb-4 mt-14">
               <div className="w-8 h-px bg-accent"></div>
-              <span className="mx-4 text-accent font-medium text-sm tracking-wider">FAQ</span>
+              <span className="mx-4 text-accent font-medium text-sm tracking-wider">
+                {t("subtitle")}
+              </span>
               <div className="w-8 h-px bg-accent"></div>
             </div>
 
             <h2 className="text-4xl md:text-6xl font-bold text-primary mb-6">
-              <span className="text-primary">FREQUENTLY</span>{" "}
-              <span className="text-accent">ASKED QUESTIONS</span>
+              <span className="text-primary">{t("title1")}</span>{" "}
+              <span className="text-accent">{t("title2")}</span>
             </h2>
 
             <div className="w-16 h-1 bg-accent mx-auto mb-2"></div>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-              Find answers to common questions about our MEP services
+              {t("description")}
             </p>
           </motion.div>
 

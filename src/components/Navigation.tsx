@@ -18,6 +18,7 @@ import Image from "next/image";
 import logo from "@/assets/bp-logo.png";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -27,6 +28,7 @@ import {
 
 export const Navigation = () => {
   const t = useTranslations("navigation");
+  const locale = useLocale();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -61,14 +63,17 @@ export const Navigation = () => {
         isScrolled ? "bg-white shadow-md" : "bg-transparent"
       }`}>
       <div className="container-custom">
-        <div className="flex items-center justify-between h-20">
+        <div
+          className={`flex items-center justify-between h-20 ${locale === "ar" ? "flex-row" : ""}`}>
           <a
             href="#home"
             onClick={(e) => {
               e.preventDefault();
               scrollToSection("#home");
             }}
-            className="flex items-center space-x-3">
+            className={`flex items-center ${
+              locale === "ar" ? "space-x-reverse space-x-3" : "space-x-3"
+            }`}>
             <Image
               src={logo}
               alt="Black Pearls Contracting"
@@ -80,7 +85,10 @@ export const Navigation = () => {
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
+          <div
+            className={`hidden lg:flex items-center ${
+              locale === "ar" ? "space-x-reverse space-x-8" : "space-x-8"
+            }`}>
             {navLinks.map((link) => (
               <a
                 key={link.name}
@@ -95,7 +103,10 @@ export const Navigation = () => {
             ))}
 
             {/* Social Media Icons */}
-            <div className="flex items-center space-x-3 ml-6">
+            <div
+              className={`flex items-center ${
+                locale === "ar" ? "space-x-reverse space-x-3 mr-6" : "space-x-3 ml-6"
+              }`}>
               <a
                 href="https://www.facebook.com/people/The-Black-Pearls/61555944485983/"
                 target="_blank"
@@ -169,7 +180,10 @@ export const Navigation = () => {
               ))}
 
               {/* Mobile Social Media Icons */}
-              <div className="flex items-center justify-center space-x-4 py-4">
+              <div
+                className={`flex items-center justify-center ${
+                  locale === "ar" ? "space-x-reverse space-x-4" : "space-x-4"
+                } py-4`}>
                 <a
                   href="#"
                   aria-label="Facebook"

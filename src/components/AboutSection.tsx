@@ -17,6 +17,7 @@ import {
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -27,6 +28,7 @@ const AboutSection = () => {
   const servicesRef = useRef<HTMLDivElement>(null);
   const badgeRef = useRef<HTMLDivElement>(null);
   const citySkylineRef = useRef<HTMLDivElement>(null);
+  const t = useTranslations("aboutSection");
 
   useEffect(() => {
     if (
@@ -150,27 +152,27 @@ const AboutSection = () => {
       });
     }
   }, []);
+
   const services = [
     {
       icon: Award,
-      title: "Certified Expertise",
-      description:
-        "MEP engineers and technicians certified to regional and international standards.",
+      title: t("services.certifiedExpertise.title"),
+      description: t("services.certifiedExpertise.description"),
     },
     {
       icon: MessageCircle,
-      title: "Transparent Communication",
-      description: "Clear project timelines, reporting, and single-point contact.",
+      title: t("services.transparentCommunication.title"),
+      description: t("services.transparentCommunication.description"),
     },
     {
       icon: Users,
-      title: "Safety & Compliance",
-      description: "NFPA, SASO, and Saudi building code aligned processes and documentation.",
+      title: t("services.safetyCompliance.title"),
+      description: t("services.safetyCompliance.description"),
     },
     {
       icon: Star,
-      title: "Quality Assurance",
-      description: "Commissioning, testing, and handover with complete documentation.",
+      title: t("services.qualityAssurance.title"),
+      description: t("services.qualityAssurance.description"),
     },
   ];
 
@@ -224,11 +226,9 @@ const AboutSection = () => {
               ref={badgeRef}
               className="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-lg px-4 py-3 border border-gray-100">
               <div className="text-xs font-black font-heading uppercase tracking-wider text-primary">
-                MEP Excellence
+                {t("badge.title")}
               </div>
-              <div className="text-[10px] text-muted-foreground">
-                HVAC • Fire • Electrical • Plumbing
-              </div>
+              <div className="text-[10px] text-muted-foreground">{t("badge.services")}</div>
             </div>
           </div>
 
@@ -237,21 +237,17 @@ const AboutSection = () => {
             {/* Header */}
             <div className="flex items-center mb-4">
               <div className="w-8 h-px bg-accent"></div>
-              <span className="mx-4 text-accent font-medium text-sm tracking-wider">About Us</span>
+              <span className="mx-4 text-accent font-medium text-sm tracking-wider">
+                {t("subtitle")}
+              </span>
               <div className="w-8 h-px bg-accent"></div>
             </div>
 
             <h2 className="text-4xl md:text-6xl font-black font-heading uppercase tracking-wider text-primary leading-tight">
-              LEADING MEP CONTRACTOR DELIVERING END-TO-END SOLUTIONS{" "}
+              {t("title")}
             </h2>
 
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              At Black Pearls Contracting, we take pride in delivering fully integrated construction
-              solutions that begin with strong civil foundations and extend seamlessly into advanced
-              MEP systems. From structural works, finishing, and infrastructure development to
-              electrical, HVAC, plumbing, and safety systems — every element is designed and
-              executed as part of a single, coordinated process.
-            </p>
+            <p className="text-lg text-muted-foreground leading-relaxed">{t("description")}</p>
 
             {/* Services Grid */}
             <div ref={servicesRef} className="grid grid-cols-2 gap-4">
