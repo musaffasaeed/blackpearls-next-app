@@ -118,33 +118,33 @@ export const Footer = () => {
           </div>
 
           {/* Contact Info */}
-          <div>
+          <div className="min-w-0">
             <h3 className="text-lg font-bold mb-6">{t("contact.title")}</h3>
             <ul className="space-y-4">
               <li className="flex items-start space-x-3">
                 <Phone className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
-                <div>
+                <div className="min-w-0 flex-1">
                   <a
                     href="tel:+966507116423"
-                    className="text-primary-foreground/80 hover:text-accent transition-colors">
+                    className="text-primary-foreground/80 hover:text-accent transition-colors break-words">
                     +966507116423
                   </a>
                 </div>
               </li>
               <li className="flex items-start space-x-3">
                 <Mail className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
-                <div>
+                <div className="min-w-0 flex-1">
                   <a
                     href="mailto:muhammadmusaffa@theblackpearlsa.com"
-                    className="text-primary-foreground/80 hover:text-accent transition-colors">
+                    className="text-primary-foreground/80 hover:text-accent transition-colors break-words inline-block">
                     muhammadmusaffa@theblackpearlsa.com
                   </a>
                 </div>
               </li>
               <li className="flex items-start space-x-3">
                 <MapPin className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
-                <div>
-                  <span className="text-primary-foreground/80">
+                <div className="min-w-0 flex-1">
+                  <span className="text-primary-foreground/80 break-words">
                     Mishrifah District, 6740, Jeddah 23331, Saudi Arabia
                   </span>
                 </div>

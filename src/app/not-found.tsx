@@ -3,19 +3,13 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Navigation } from "@/components/Navigation";
-import { Footer } from "@/components/Footer";
 import { Home, ArrowLeft, Phone, CheckCircle } from "lucide-react";
-
-export const dynamic = "force-dynamic";
 
 export default function NotFound() {
   const router = useRouter();
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">
-      <Navigation />
-
       <main className="container mx-auto px-4 py-16">
         <div className="max-w-4xl mx-auto">
           {/* 404 Error Section */}
@@ -122,8 +116,6 @@ export default function NotFound() {
           </div>
         </div>
       </main>
-
-      <Footer />
     </div>
   );
 }

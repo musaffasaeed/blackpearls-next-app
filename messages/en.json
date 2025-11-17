@@ -188,9 +188,10 @@
   },
   "ceo": {
     "subtitle": "Meet Our Leader",
+    "title": "Our Leadership",
     "description": "Under visionary leadership, Black Pearls Contracting has grown to become Saudi Arabia's premier MEP contractor, delivering exceptional construction solutions across the kingdom.",
     "name": "Muhammad Abdullah Al Zughaibi",
-    "title": "Chief Executive Officer",
+    "role": "Chief Executive Officer",
     "bio": "With over 15 years of experience in construction and engineering, Muhammad Abdullah Al Zughaibi leads Black Pearls Contracting with a vision of excellence, innovation, and sustainable growth. His leadership has been instrumental in establishing the company as a trusted partner for major projects across Saudi Arabia.",
     "experience": {
       "title": "Professional Experience",
