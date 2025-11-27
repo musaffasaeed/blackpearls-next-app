@@ -169,7 +169,7 @@ export const Hero = () => {
         {/* Main Background Image */}
         <div ref={imageRef} className="absolute inset-0">
           <Image
-            src="/images/hero-background.jpg"
+            src="/images/services-images/IMG_2751.JPG"
             alt="Modern construction site with advanced MEP systems"
             fill
             className="object-cover opacity-40"

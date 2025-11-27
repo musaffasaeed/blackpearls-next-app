@@ -135,21 +135,21 @@ export const ContactForm = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
-                className="flex items-start space-x-4">
+                className="flex items-start space-x-4 rtl:space-x-reverse">
                 <div className="w-12 h-12 rounded-lg bg-accent flex items-center justify-center flex-shrink-0">
                   <info.icon className="h-6 w-6 text-accent-foreground" />
                 </div>
-                <div>
+                <div className="flex-1 min-w-0">
                   <h4 className="font-semibold text-primary mb-1">{info.title}</h4>
                   <p className="text-sm text-muted-foreground mb-2">{info.subtitle}</p>
                   {info.link ? (
                     <a
                       href={info.link}
-                      className="text-muted-foreground hover:text-accent transition-colors">
+                      className="text-muted-foreground hover:text-accent transition-colors break-words">
                       {info.content}
                     </a>
                   ) : (
-                    <p className="text-muted-foreground">{info.content}</p>
+                    <p className="text-muted-foreground break-words">{info.content}</p>
                   )}
                 </div>
               </motion.div>
