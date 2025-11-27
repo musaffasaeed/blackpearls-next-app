@@ -38,7 +38,7 @@ export const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div>
-            <div className="flex items-center space-x-3 mb-6">
+            <div className="flex items-center space-x-3 rtl:space-x-reverse mb-6">
               <Image
                 src={logo}
                 alt="Black Pearls Contracting"
@@ -49,7 +49,7 @@ export const Footer = () => {
               <span className="text-lg font-bold">{t("companyName")}</span>
             </div>
             <p className="text-primary-foreground/80 mb-6 leading-relaxed">{t("description")}</p>
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 rtl:space-x-reverse">
               <a
                 href="#"
                 aria-label="Facebook"
@@ -121,7 +121,7 @@ export const Footer = () => {
           <div className="min-w-0">
             <h3 className="text-lg font-bold mb-6">{t("contact.title")}</h3>
             <ul className="space-y-4">
-              <li className="flex items-start space-x-3">
+              <li className="flex items-start space-x-3 rtl:space-x-reverse">
                 <Phone className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
                 <div className="min-w-0 flex-1">
                   <a
@@ -131,7 +131,7 @@ export const Footer = () => {
                   </a>
                 </div>
               </li>
-              <li className="flex items-start space-x-3">
+              <li className="flex items-start space-x-3 rtl:space-x-reverse">
                 <Mail className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
                 <div className="min-w-0 flex-1">
                   <a
@@ -141,7 +141,7 @@ export const Footer = () => {
                   </a>
                 </div>
               </li>
-              <li className="flex items-start space-x-3">
+              <li className="flex items-start space-x-3 rtl:space-x-reverse">
                 <MapPin className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
                 <div className="min-w-0 flex-1">
                   <span className="text-primary-foreground/80 break-words">

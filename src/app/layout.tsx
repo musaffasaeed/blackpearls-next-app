@@ -53,7 +53,7 @@ export const metadata: Metadata = {
       "Leading MEP contractor in Saudi Arabia delivering integrated civil and MEP construction solutions. Specializing in HVAC, electrical, fire safety, plumbing systems.",
     images: [
       {
-        url: "/images/hero-background.jpg",
+        url: "/images/services-images/IMG_2751.JPG",
         width: 1200,
         height: 630,
         alt: "Black Pearls Contracting - Professional MEP Construction Services",
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     title: "Black Pearls Contracting — Civil & MEP Construction Solutions, Saudi Arabia",
     description:
       "Leading MEP contractor in Saudi Arabia delivering integrated civil and MEP construction solutions.",
-    images: ["/images/hero-background.jpg"],
+    images: ["/images/services-images/IMG_2751.JPG"],
   },
   robots: {
     index: true,
@@ -102,8 +102,8 @@ export default async function RootLayout({
     description:
       "Leading MEP contractor in Saudi Arabia delivering integrated civil and MEP construction solutions",
     url: "https://blackpearls.sa",
-    logo: "https://blackpearls.sa/images/hero-background.jpg",
-    image: "https://blackpearls.sa/images/hero-background.jpg",
+    logo: "https://blackpearls.sa/images/services-images/IMG_2751.JPG",
+    image: "https://blackpearls.sa/images/services-images/IMG_2751.JPG",
     telephone: "+966507116423",
     email: "muhammadmusaffa@theblackpearlsa.com",
     address: {

@@ -179,6 +179,11 @@ export const Navigation = () => {
                 </a>
               ))}
 
+              {/* Mobile Language Switcher */}
+              <div className="py-4">
+                <LanguageSwitcher />
+              </div>
+
               {/* Mobile Social Media Icons */}
               <div
                 className={`flex items-center justify-center ${

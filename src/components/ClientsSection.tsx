@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const ClientsSection = () => {
   // Client logos array
-  const clientLogos = Array.from({ length: 19 }, (_, i) => ({
+  const clientLogos = Array.from({ length: 21 }, (_, i) => ({
     id: i + 1,
     src: `/images/clients/logo${i + 1}.png`,
     alt: `Client Logo ${i + 1}`,
